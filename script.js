@@ -11,17 +11,21 @@ function submitRequest(event) {
     const searchEngine = select.value;
 
     let params;
+    let domen;
 
     if (searchEngine === "google" || searchEngine === "bing") {
         params = "/search?q=";
+        domen = "com"
     } else if (searchEngine === "yandex") {
         params = "/search?text=";
+        domen = "ru"
     } else if (searchEngine === "duckduckgo") {
+        domen = "com"
         params = "?q="
     }
 
 
-    window.location.href = `https://www.${searchEngine}.com/${params}` + value;
+    window.location.href = `https://www.${searchEngine}.${domen}/${params}` + value;
 
 
 }
